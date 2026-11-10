@@ -1,0 +1,237 @@
+{
+ "status": {
+  "code": "200",
+  "text": "ok"
+ },
+ "data": {
+  "sumario": {
+   "metadatos": {
+    "publicacion": "BOE",
+    "fecha_publicacion": "20261028"
+   },
+   "diario": [
+    {
+     "numero": "267",
+     "sumario_diario": {
+      "identificador": "BOE-S-2026-267",
+      "url_pdf": {
+       "texto": "x"
+      }
+     },
+     "seccion": [
+      {
+       "codigo": "2A",
+       "nombre": "II. AUTORIDADES Y PERSONAL - A. Nombramientos, situaciones e incidencias",
+       "departamento": [
+        {
+         "codigo": "9511",
+         "nombre": "Ministerio de Asuntos Exteriores, Unión Europea y Cooperación",
+         "epigrafe": [
+          {
+           "nombre": "Ceses",
+           "item": [
+            {
+             "identificador": "BOE-A-2026-22533",
+             "titulo": "Real Decreto 938/2026, de 27 de octubre, por el que se dispone el cese de don Alfredo Martínez Serrano como Embajador de España en Canadá.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22533.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22533",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-22533"
+            },
+            {
+             "identificador": "BOE-A-2026-22534",
+             "titulo": "Real Decreto 939/2026, de 27 de octubre, por el que se dispone el cese de don Juan Antonio March Pujol como Embajador de España en la República de la India.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22534.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22534",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-22534"
+            },
+            {
+             "identificador": "BOE-A-2026-22535",
+             "titulo": "Real Decreto 940/2026, de 27 de octubre, por el que se dispone el cese de don Juan Antonio March Pujol como Embajador de España en el Reino de Bután.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22535.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22535",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-22535"
+            },
+            {
+             "identificador": "BOE-A-2026-22536",
+             "titulo": "Real Decreto 941/2026, de 27 de octubre, por el que se dispone el cese de don Juan Antonio March Pujol como Embajador de España en la República de Maldivas.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22536.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22536",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-22536"
+            },
+            {
+             "identificador": "BOE-A-2026-22537",
+             "titulo": "Real Decreto 942/2026, de 27 de octubre, por el que se dispone el cese de don Juan Antonio March Pujol como Embajador de España en Nepal.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22537.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22537",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-22537"
+            },
+            {
+             "identificador": "BOE-A-2026-22538",
+             "titulo": "Real Decreto 943/2026, de 27 de octubre, por el que se dispone el cese de don Juan Antonio March Pujol como Embajador de España en la República Socialista Democrática de Sri Lanka.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22538.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22538",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-22538"
+            }
+           ]
+          },
+          {
+           "nombre": "Nombramientos",
+           "item": [
+            {
+             "identificador": "BOE-A-2026-22539",
+             "titulo": "Real Decreto 944/2026, de 27 de octubre, por el que se designa Embajadora de España en Canadá a doña María Luisa Benítez-Donoso Tarascón.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22539.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22539",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-22539"
+            },
+            {
+             "identificador": "BOE-A-2026-22540",
+             "titulo": "Real Decreto 945/2026, de 27 de octubre, por el que se designa Embajador de España en la República de la India a don Alfredo Martínez Serrano.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22540.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22540",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-22540"
+            },
+            {
+             "identificador": "BOE-A-2026-90001",
+             "titulo": "Resolución de 28 de julio de 2026, de la Subsecretaría, por la que se resuelve la convocatoria de libre designación, efectuada por Resolución de 17 de junio de 2026, en la Carrera Diplomática.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-90001.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-90001",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-90001"
+            },
+            {
+             "identificador": "BOE-A-2026-90002",
+             "titulo": "Real Decreto 618/2021, de 20 de julio, por el que se designa Embajador Representante Permanente de España ante la Unión Europea a don Marcos Alonso Alonso.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-90002.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-90002",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-90002"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "codigo": "7777",
+         "nombre": "Ministerio de Universidades",
+         "epigrafe": [
+          {
+           "nombre": "Nombramientos",
+           "item": [
+            {
+             "identificador": "BOE-A-2026-90003",
+             "titulo": "Resolución de 5 de octubre de 2026, de la Universidad de Sevilla, por la que se nombra Catedrático a don X.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-90003.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-90003",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-90003"
+            },
+            {
+             "identificador": "BOE-A-2026-22453",
+             "titulo": "Resolución de 20 de octubre de 2026, de la Secretaría de Estado, por la que se dispone el cese de doña Y como Directora del Gabinete del Secretario de Estado.",
+             "url_pdf": {
+              "szBytes": "100",
+              "szKBytes": "1",
+              "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22453.pdf"
+             },
+             "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22453",
+             "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-22453"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "codigo": "2B",
+       "nombre": "II. AUTORIDADES Y PERSONAL - B. Oposiciones y concursos",
+       "departamento": [
+        {
+         "codigo": "8888",
+         "nombre": "Ministerio de Trabajo y Economía Social",
+         "epigrafe": {
+          "nombre": "Concursos",
+          "item": {
+           "identificador": "BOE-A-2026-90004",
+           "titulo": "Resolución de 10 de abril de 2026, conjunta de las Subsecretarías de Trabajo y Economía Social y de Inclusión, Seguridad Social y Migraciones, por la que se convoca la provisión de puestos de trabajo por el sistema de libre designación, en las Consejerías de Trabajo, Migraciones y Seguridad Social en Italia y Reino Unido.",
+           "url_pdf": {
+            "szBytes": "100",
+            "szKBytes": "1",
+            "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-90004.pdf"
+           },
+           "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-90004",
+           "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-90004"
+          }
+         }
+        }
+       ]
+      },
+      {
+       "codigo": "1",
+       "nombre": "I. DISPOSICIONES GENERALES",
+       "departamento": {
+        "nombre": "X",
+        "epigrafe": {
+         "nombre": "Y",
+         "item": {
+          "identificador": "BOE-A-2026-90005",
+          "titulo": "Real Decreto 1/2026, por el que se designa Embajador de España en Z a don W.",
+          "url_pdf": {
+           "szBytes": "100",
+           "szKBytes": "1",
+           "texto": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-90005.pdf"
+          },
+          "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-90005",
+          "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-90005"
+         }
+        }
+       }
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

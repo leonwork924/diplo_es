@@ -1,0 +1,4 @@
+{
+  "recipients": ["leon.deryckel@mobilitas.org"],
+  "note": "Destinataires des alertes. Par défaut seulement Leon (test). Quand Antonio / Sonia ont validé le contenu, ajoute leurs adresses ici (ex. \"antonio...@ags-globalsolutions.com\")."
+}

@@ -1,0 +1,81 @@
+name: diplo_es - alerte BOE
+
+on:
+  # AUCUNE PLANIFICATION : comme diplo_fr, rien ne tourne tout seul tant que l'IT n'a pas donné son accord.
+  # Le workflow ne PREND RIEN ET N'ENVOIE RIEN : il remplit data/outbox.json ; les brouillons Outlook
+  # sont créés en local par tools/create_outlook_drafts.ps1, et c'est toi qui relis puis envoies.
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry-run (n'écrit rien : affiche seulement l'alerte dans le log)"
+        type: boolean
+        default: false
+      days_back:
+        description: "Nombre de jours de BOE à lire (8 en usage normal ; 365 avec backfill pour l'historique)"
+        type: string
+        default: "8"
+      backfill:
+        description: "Historique : remplit le journal et l'Excel SANS alerte (à utiliser avec days_back=365)"
+        type: boolean
+        default: false
+      test_recipient:
+        description: "Si rempli, l'alerte est adressée à cette adresse au lieu de celles de config.json (test)"
+        type: string
+        default: ""
+      save_samples:
+        description: "Diagnostic : sauvegarde des réponses brutes du BOE dans data/samples/"
+        type: boolean
+        default: false
+      reset:
+        description: "REPART DE ZÉRO : vide seen, journal et outbox"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Vérifie la classification sur de VRAIS titres du BOE
+        run: python3 tests/check_fixtures.py
+
+      - name: Run
+        run: |
+          cd src
+          python3 main.py \
+            --days-back ${{ github.event.inputs.days_back || '8' }} \
+            ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }} \
+            ${{ github.event.inputs.backfill == 'true' && '--backfill' || '' }} \
+            ${{ github.event.inputs.test_recipient != '' && format('--test-recipient {0}', github.event.inputs.test_recipient) || '' }} \
+            ${{ github.event.inputs.save_samples == 'true' && '--save-samples' || '' }} \
+            ${{ github.event.inputs.reset == 'true' && '--reset' || '' }} \
+            2>&1 | tee ../data/last_run.log
+
+      - name: Commit et push l'état mis à jour
+        run: |
+          git config user.name "diplo-es-bot"
+          git config user.email "diplo-es-bot@users.noreply.github.com"
+          git add --all data
+          if git diff --staged --quiet; then
+            echo "Rien de nouveau."
+            exit 0
+          fi
+          git commit -m "Update state (seen, movements, outbox)"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main -X ours
+            sleep 5
+          done
+          exit 1

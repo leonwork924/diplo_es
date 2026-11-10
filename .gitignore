@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.drafted_ids.txt
+data/notifications_du_jour.html
+suivi_envois*.csv
+deja_envoyes.csv
+data/notifications_du_jour.html
