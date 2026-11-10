@@ -135,33 +135,41 @@ def main() -> None:
             tracking.write_xlsx(log)
         return
 
-    dig = digest_mod.build(movements, d_from, today) if movements else None
+    cfg = state.load_config()
+    recipients = [args.test_recipient] if args.test_recipient else cfg.get("recipients", [])
+    mails = []
+    for mv in movements:
+        if mv.kind == "appointment":
+            p_ = digest_mod.personal(mv, movements)
+            mails.append({"id": p_["id"], "subject": p_["subject"], "body": p_["body"],
+                          "meta": {"name": p_["name"], "event": "Nombramiento", "location": p_["location"],
+                                   "branch": "AGS Spain", "link": p_["link"]}})
+    dig = digest_mod.build(movements, d_from, today)
     if dig:
-        cfg = state.load_config()
-        recipients = [args.test_recipient] if args.test_recipient else cfg.get("recipients", [])
+        mails.append({"id": dig["id"], "subject": dig["subject"], "body": dig["body"],
+                      "meta": {"name": f"BOE alert {today.isoformat()}", "event": "digest", "location": "",
+                               "branch": "AGS Spain", "link": dig["link"]}})
+    for m in mails:
         print("\n" + "=" * 70)
         print("TO:", ", ".join(recipients) or "(aucun destinataire dans config.json)")
-        print("SUBJECT:", dig["subject"])
+        print("SUBJECT:", m["subject"])
         print("-" * 70)
-        print(dig["body"])
+        print(m["body"])
         print("=" * 70)
-        if not args.dry_run:
-            if not recipients:
-                print("⚠ Aucun destinataire : alerte NON mise en file (renseigne config.json).")
-            else:
-                outbox.append({"id": dig["id"], "created": today.isoformat(), "to": recipients,
-                               "subject": dig["subject"], "body": dig["body"],
-                               "meta": {"name": f"BOE alert {today.isoformat()}", "event": "digest",
-                                        "location": "", "branch": "AGS Spain", "link": dig["link"]}})
-    if dig and not args.dry_run and not outbox_has(outbox, dig["id"]):
-        print("⚠ Rien n'a été écrit (pas de destinataire) : les mouvements ne sont pas marqués comme vus, ils reviendront au prochain run.")
-        return
+    if mails and not args.dry_run:
+        if not recipients:
+            print("⚠ Aucun destinataire : alerte NON mise en file (renseigne config.json).")
+            print("⚠ Rien n'a été écrit (pas de destinataire) : les mouvements ne sont pas marqués comme vus, ils reviendront au prochain run.")
+            return
+        for m in mails:
+            outbox.append({"id": m["id"], "created": today.isoformat(), "to": recipients,
+                           "subject": m["subject"], "body": m["body"], "meta": m["meta"]})
     if not args.dry_run:
         log += tracking.log_rows(movements, today.isoformat())
         seen |= new_ids
         state.save_seen(seen); state.save_log(log); state.save_outbox(outbox)
         tracking.write_xlsx(log)
-    print(f"\n{len(movements)} mouvement(s), {'alerte mise en file dans data/outbox.json' if dig and not args.dry_run else 'aucune écriture' if args.dry_run else 'pas d alerte'} (aucun envoi par ce script).")
+    print(f"\n{len(movements)} mouvement(s), {str(len(mails)) + ' e-mail(s) mis en file dans data/outbox.json' if mails and not args.dry_run else 'aucune écriture' if args.dry_run else 'pas d alerte'} (aucun envoi par ce script).")
 
 
 if __name__ == "__main__":

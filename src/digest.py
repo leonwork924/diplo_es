@@ -91,13 +91,60 @@ def _fmt(mv: Movement) -> str:
     return "\n".join(lines) + "\n" + links
 
 
+def _salutation(mv: Movement) -> str:
+    parts = mv.person.split()
+    surname = parts[1] if len(parts) > 1 else mv.person
+    fem = bool(mv.posts) and mv.posts[0].lower().startswith("embajadora")
+    return f"Estimada Sra. {surname}" if fem else f"Estimado Sr. {surname}"
+
+
+def personal(mv: Movement, batch: list[Movement], recipients_note: str = "") -> dict:
+    """Un e-mail par nomination, avec le template d'AGS Spain pré-rempli."""
+    places = _uniq(mv.places)
+    dest = "; ".join(places)
+    origin = ""
+    predecessor = ""
+    for o in batch:
+        if o.kind != "cese":
+            continue
+        if o.person == mv.person and o.date <= mv.date:
+            origin = "; ".join(_uniq(o.places))
+        elif set(o.places) & set(places):
+            predecessor = f"{o.person} (end of mission published {o.date})"
+    post = _uniq(mv.posts)[0] if mv.posts else ""
+    email = guess_email(mv.person)
+    letter = TEMPLATE.split("\n\n", 1)[1].replace("Estimado Sr./Sra. ____________", _salutation(mv), 1)
+    letter = letter.replace("se trasladara desde __________ a __________",
+                            f"se trasladara desde {origin or '__________'} a {dest}", 1)
+    delegacion = "____________ (check if AGS has its own office in " + dest + ")"
+    letter = letter.replace("tenemos delegacion propia ____________", "tenemos delegacion propia " + delegacion, 1)
+    head = [
+        f"New diplomatic appointment published in the BOE on {mv.date}.", "",
+        f"Diplomat: {mv.person}", f"Post: {post}", f"Destination: {dest}",
+        f"Coming from: {origin or 'not stated in the BOE (fill in)'}",
+    ]
+    if predecessor:
+        head.append(f"Predecessor at this post: {predecessor}")
+    head += [f"Ministry: {mv.ministry}",
+             f"Suggested email: {email} (firstname.surname@maec.es, please verify)" if email else "",
+             "BOE: " + ", ".join(_uniq(mv.urls)), "",
+             "-" * 60, "DRAFT EMAIL (AGS Spain template, ready to adapt and send):", "", letter,
+             "-" * 60, "Automatic alert: please check the BOE link before contacting anyone."]
+    h = hashlib.sha1("|".join(sorted(mv.boe_ids)).encode()).hexdigest()[:8]
+    return {"id": f"BOE-APPT:{mv.date}:{h}",
+            "subject": f"[Diplo ES] Appointment: {mv.person} -- {post}",
+            "body": "\n".join(x for x in head if x is not None),
+            "link": (mv.urls or [""])[0], "name": mv.person, "location": dest}
+
+
 def build(movements: list[Movement], d_from: date, d_to: date) -> dict | None:
+    movements = [m for m in movements if m.kind != "appointment"]
     if not movements:
         return None
     counts = {k: sum(1 for m in movements if m.kind == k) for k in ORDER}
     parts = [f"{n} {SINGULAR[k] if n == 1 else PLURAL[k]}" for k, n in counts.items() if n]
     period = d_to.isoformat() if d_from == d_to else f"{d_from.isoformat()} to {d_to.isoformat()}"
-    subject = f"[Diplo ES] BOE alert {period} -- " + ", ".join(parts)
+    subject = f"[Diplo ES] BOE alert {period} (other moves) -- " + ", ".join(parts)
     body = [f"BOE alert, {period}: {', '.join(parts)}.", ""]
     for k in ORDER:
         group = sorted((m for m in movements if m.kind == k), key=lambda m: (m.date, m.person or m.summary))
@@ -106,10 +153,6 @@ def build(movements: list[Movement], d_from: date, d_to: date) -> dict | None:
         body.append(f"{LABELS[k].upper()} ({len(group)})")
         body.extend(_fmt(m) for m in group)
         body.append("")
-    if counts.get("appointment"):
-        body.append("-" * 60)
-        body.append(TEMPLATE)
-        body.append("-" * 60)
     body.append("Source: Boletin Oficial del Estado (BOE), sections II.A and II.B, all ministries.")
     body.append("Automatic alert: please check the BOE link before contacting anyone.")
     ids = sorted(i for m in movements for i in m.boe_ids)

@@ -55,7 +55,11 @@ check(app.get("Marcos Alonso Alonso") is not None and app["Marcos Alonso Alonso"
 check(app.get("María Luisa Benítez-Donoso Tarascón") is not None, "nomination au féminin (Embajadora) non lue")
 
 d = digest.build(g, date(2026, 10, 21), date(2026, 10, 28))
-check(d is not None and "3 appointments" in d["subject"] and "2 ends of mission" in d["subject"], f"objet de l'alerte : {d and d['subject']}")
+check(d is not None and "appointment" not in d["subject"] and "2 ends of mission" in d["subject"], f"objet de l'alerte : {d and d['subject']}")
+pm = digest.personal(app["Marcos Alonso Alonso"], g)
+check("Estimado Sr. Alonso" in pm["body"] and "Unión Europea" in pm["body"] and pm["subject"].startswith("[Diplo ES] Appointment"), "e-mail personnalisé par nomination")
+pf = digest.personal(app["María Luisa Benítez-Donoso Tarascón"], g)
+check("Estimada Sra." in pf["body"], "salutation au féminin")
 check(d is not None and "5 accreditations" in d["body"] and "March Pujol" in d["body"], "alerte : regroupement non affiché")
 check(digest.build([], date(2026, 10, 21), date(2026, 10, 28)) is None, "pas d'alerte quand rien de nouveau")
 
