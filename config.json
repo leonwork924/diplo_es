@@ -1,4 +1,8 @@
 {
-  "recipients": ["leon.deryckel@mobilitas.org"],
-  "note": "Destinataires des alertes. Par défaut seulement Leon (test). Quand Antonio / Sonia ont validé le contenu, ajoute leurs adresses ici (ex. \"antonio...@ags-globalsolutions.com\")."
+  "recipients": [
+    "antonio.gonzalez@ags-globalsolutions.com",
+    "karolyn.perez@ags-globalsolutions.com",
+    "sonia.sanchez@ags-globalsolutions.com"
+  ],
+  "note": "Destinataires confirmés par Sonia Sanchez le 05/11/2026 : Antonio, Karolyn et Sonia. Format des e-mails diplomates : prénom.nom@maec.es."
 }
