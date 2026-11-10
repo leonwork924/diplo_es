@@ -1,30 +1,18 @@
-8 jour(s) de BOE lus entre 2026-11-02 et 2026-11-10 ; 3 mouvement(s) nouveau(x).
-  appointment: 2, cese: 1
-
-======================================================================
-TO: leon.deryckel@mobilitas.org
-SUBJECT: [Diplo ES] BOE alert 2026-11-02 to 2026-11-10 -- 2 appointments, 1 end of mission
-----------------------------------------------------------------------
-BOE alert, 2026-11-02 to 2026-11-10: 2 appointments, 1 end of mission.
-
-APPOINTMENTS (2)
-  - Juan Manglano Aboín -- Embajador de España en la República de Cabo Verde
-      Where: Cabo Verde
-      Ministry: MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN  |  BOE date: 2026-11-04
-      https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23107
-  - Sergio Farré Salvá -- Embajador de España en el Estado de Brunéi Darusalam
-      Where: Brunéi Darusalam
-      Ministry: MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN  |  BOE date: 2026-11-04
-      https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23108
-
-ENDS OF MISSION (CESE) (1)
-  - Ana Paredes Prieto -- Embajadora de España en la República de Cabo Verde
-      Where: Cabo Verde
-      Ministry: MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN  |  BOE date: 2026-11-04
-      https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23106
-
-Source: Boletin Oficial del Estado (BOE), sections II.A and II.B, all ministries.
-Automatic alert: please check the BOE link before contacting anyone.
-======================================================================
-
-3 mouvement(s), alerte mise en file dans data/outbox.json (aucun envoi par ce script).
+  2026-10-27 : 290 textes lus, 0 mouvement(s)
+  2026-10-28 : 184 textes lus, 8 mouvement(s)
+  2026-10-29 : 216 textes lus, 0 mouvement(s)
+  2026-10-30 : 193 textes lus, 0 mouvement(s)
+  2026-10-31 : 369 textes lus, 2 mouvement(s)
+  2026-11-01 : pas de BOE
+  2026-11-02 : 132 textes lus, 0 mouvement(s)
+  2026-11-03 : 240 textes lus, 0 mouvement(s)
+  2026-11-04 : 234 textes lus, 0 mouvement(s)
+  2026-11-05 : 205 textes lus, 0 mouvement(s)
+  2026-11-06 : 191 textes lus, 0 mouvement(s)
+  2026-11-07 : 304 textes lus, 0 mouvement(s)
+  2026-11-08 : pas de BOE
+  2026-11-09 : 152 textes lus, 0 mouvement(s)
+  2026-11-10 : 259 textes lus, 0 mouvement(s)
+13 jour(s) de BOE lus entre 2026-10-27 et 2026-11-10 ; 6 mouvement(s) nouveau(x).
+  appointment: 2, cese: 2, vacancy: 2
+[backfill] journal et Excel mis à jour, aucune alerte mise en file.

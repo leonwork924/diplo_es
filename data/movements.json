@@ -37,5 +37,87 @@
     ],
     "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23108",
     "detected": "2026-11-10"
+  },
+  {
+    "date": "2026-10-28",
+    "kind": "cese",
+    "person": "Alfredo Martínez Serrano",
+    "post": "Embajador de España en Canadá",
+    "place": "Canadá",
+    "ministry": "MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN",
+    "boe_ids": [
+      "BOE-A-2026-22533"
+    ],
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22533",
+    "detected": "2026-11-10"
+  },
+  {
+    "date": "2026-10-28",
+    "kind": "cese",
+    "person": "Juan Antonio March Pujol",
+    "post": "Embajador de España en la República de la India; Embajador de España en el Reino de Bután; Embajador de España en la República de Maldivas; Embajador de España en Nepal; Embajador de España en la República Socialista Democrática de Sri Lanka",
+    "place": "India; Bután; Maldivas; Nepal; Sri Lanka",
+    "ministry": "MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN",
+    "boe_ids": [
+      "BOE-A-2026-22534",
+      "BOE-A-2026-22535",
+      "BOE-A-2026-22536",
+      "BOE-A-2026-22537",
+      "BOE-A-2026-22538"
+    ],
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22534",
+    "detected": "2026-11-10"
+  },
+  {
+    "date": "2026-10-28",
+    "kind": "appointment",
+    "person": "María Luisa Benítez-Donoso Tarascón",
+    "post": "Embajadora de España en Canadá",
+    "place": "Canadá",
+    "ministry": "MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN",
+    "boe_ids": [
+      "BOE-A-2026-22539"
+    ],
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22539",
+    "detected": "2026-11-10"
+  },
+  {
+    "date": "2026-10-28",
+    "kind": "appointment",
+    "person": "Alfredo Martínez Serrano",
+    "post": "Embajador de España en la República de la India",
+    "place": "India",
+    "ministry": "MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN",
+    "boe_ids": [
+      "BOE-A-2026-22540"
+    ],
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22540",
+    "detected": "2026-11-10"
+  },
+  {
+    "date": "2026-10-31",
+    "kind": "vacancy",
+    "person": "",
+    "post": "Convoca concurso para la provisión de puestos de asesores técnicos y asesoras técnicas en el exterior",
+    "place": "",
+    "ministry": "MINISTERIO DE EDUCACIÓN, FORMACIÓN PROFESIONAL Y DEPORTES",
+    "boe_ids": [
+      "BOE-A-2026-22806"
+    ],
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22806",
+    "detected": "2026-11-10"
+  },
+  {
+    "date": "2026-10-31",
+    "kind": "vacancy",
+    "person": "",
+    "post": "Convoca concurso para la provisión de puestos de personal docente en el exterior",
+    "place": "",
+    "ministry": "MINISTERIO DE EDUCACIÓN, FORMACIÓN PROFESIONAL Y DEPORTES",
+    "boe_ids": [
+      "BOE-A-2026-22807"
+    ],
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22807",
+    "detected": "2026-11-10"
   }
 ]
