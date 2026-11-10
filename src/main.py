@@ -125,6 +125,12 @@ def main() -> None:
     for m in movements:
         kinds[m.kind] = kinds.get(m.kind, 0) + 1
     print("  " + ", ".join(f"{k}: {v}" for k, v in sorted(kinds.items())) if kinds else "  rien de nouveau")
+    by_year: dict[str, dict[str, int]] = {}
+    for m in movements:
+        by_year.setdefault(m.date[:4], {}).setdefault(m.kind, 0)
+        by_year[m.date[:4]][m.kind] += 1
+    for y in sorted(by_year):
+        print(f"  [PAR ANNEE] {y} : " + ", ".join(f"{k}: {v}" for k, v in sorted(by_year[y].items())) + f" (total {sum(by_year[y].values())})")
 
     if args.backfill:
         print("[backfill] journal et Excel mis à jour, aucune alerte mise en file.")
