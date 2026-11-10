@@ -44,18 +44,28 @@ def collect(d_from: date, d_to: date, seen: set[str], session, *, save_samples: 
     new: list[Movement] = []
     new_ids: set[str] = set()
     n_days = 0
+    failed: list[str] = []
     sample_dir = state.DATA / "samples"
     saved = 0
     for d in days(d_from, d_to):
-        payload = boe.fetch_sumario(d, session)
+        try:
+            payload = boe.fetch_sumario(d, session)
+        except RuntimeError as e:
+            print(f"  {d} : ECHEC ({e}) -> jour ignoré, il sera relu au prochain run si days_back le couvre.", flush=True)
+            failed.append(d.isoformat())
+            continue
         time.sleep(0.2)
         if payload is None:
+            print(f"  {d} : pas de BOE", flush=True)
             continue
         n_days += 1
         if save_samples and n_days == 1:
             sample_dir.mkdir(parents=True, exist_ok=True)
             (sample_dir / f"sumario_{d:%Y%m%d}.json").write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+        n_before = len(new)
+        n_items = 0
         for item in boe.iter_items(payload):
+            n_items += 1
             if item["id"] in seen or item["id"] in new_ids:
                 continue
             item["date"] = d.isoformat()
@@ -79,6 +89,9 @@ def collect(d_from: date, d_to: date, seen: set[str], session, *, save_samples: 
                     if fetch_details:
                         mv.details = extract_details(boe.xml_to_text(raw))
             new.append(mv)
+        print(f"  {d} : {n_items} textes lus, {len(new) - n_before} mouvement(s)", flush=True)
+    if failed:
+        print(f"⚠ {len(failed)} jour(s) en échec : {', '.join(failed)}", flush=True)
     return group(new), new_ids, n_days
 
 

@@ -37,6 +37,7 @@ permissions:
 jobs:
   notify:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -53,7 +54,7 @@ jobs:
       - name: Run
         run: |
           cd src
-          python3 main.py \
+          python3 -u main.py \
             --days-back ${{ github.event.inputs.days_back || '8' }} \
             ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }} \
             ${{ github.event.inputs.backfill == 'true' && '--backfill' || '' }} \

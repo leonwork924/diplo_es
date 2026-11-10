@@ -39,14 +39,14 @@ def _url(v) -> str:
     return str(v or "")
 
 
-def fetch_sumario(d: date, session: requests.Session | None = None, retries: int = 3) -> dict | None:
+def fetch_sumario(d: date, session: requests.Session | None = None, retries: int = 2) -> dict | None:
     """Sommaire JSON d'un jour, ou None s'il n'y a pas de BOE ce jour-là (404)."""
     s = session or requests
     url = API.format(d=d.strftime("%Y%m%d"))
     last = None
     for attempt in range(retries):
         try:
-            r = s.get(url, headers=HEADERS, timeout=30)
+            r = s.get(url, headers=HEADERS, timeout=20)
             if r.status_code == 404:
                 return None
             r.raise_for_status()
