@@ -29,7 +29,14 @@ CUES = re.compile(
     r"Agregadur|Agregad[oa]s?\b|Oficinas? Econ[oó]micas? y Comerciales?|Carrera Diplom[aá]tica|"
     r"Servicio Exterior|asesor(?:es|as)? t[eé]cnic|Misi[oó]n Diplom|Embajador",
     re.I)
-EXCLUDE = re.compile(r"acuerdan ascensos|Consejo Escolar|catedr[aá]tic|profesor|Universidad", re.I)
+EXCLUDE = re.compile(
+    r"acuerdan ascensos|Consejo Escolar|catedr[aá]tic|profesor|Universidad|"
+    r"concursos? de traslados?|funcionarios docentes|Tribunal|Juzgado|Audiencia Provincial|Secretar[ií]a de Gobierno|"
+    r"Administraci[oó]n de Justicia|Cuerpo (?:de|Nacional)", re.I)
+# Administrations régionales et locales : leurs « Consejería » ne sont pas des postes à l'étranger.
+REGIONAL_DEPT = re.compile(
+    r"^(?:COMUNIDAD|COMUNITAT|CIUDAD AUT|PRINCIPADO|REGI[OÓ]N DE MURCIA|JUNTA DE|GENERALITAT|XUNTA|GOBIERNO (?:DE|VASCO)|"
+    r"DIPUTACI|AYUNTAMIENTO|CABILDO|CONSELL|UNIVERSIDAD|UNIVERSITAT)", re.I)
 RE_CONVOCA = re.compile(r"por la que se convoca", re.I)
 RE_RESUELVE = re.compile(r"por la que se resuelve", re.I)
 
@@ -78,7 +85,7 @@ def classify(item: dict) -> Movement | None:
     title, sec = item["title"], item["section"]
     if not sec.upper().startswith("2"):      # II.A (nominations) et II.B (concours) seulement
         return None
-    if EXCLUDE.search(title):
+    if EXCLUDE.search(title) or REGIONAL_DEPT.search(item["department"].strip()):
         return None
     base = dict(date=item.get("date", ""), boe_ids=[item["id"]], urls=[item["url_html"]],
                 ministry=item["department"], title=title)

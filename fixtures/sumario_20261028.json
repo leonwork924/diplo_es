@@ -205,6 +205,30 @@
            "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-90004"
           }
          }
+        },
+        {
+         "nombre": "COMUNIDAD AUTÓNOMA DEL PRINCIPADO DE ASTURIAS",
+         "epigrafe": {
+          "nombre": "Concursos",
+          "item": {
+           "identificador": "BOE-A-2026-23140",
+           "titulo": "Resolución de 20 de octubre de 2026, de la Consejería de Educación, por la que se publica la convocatoria de concursos de traslados de ámbito estatal correspondiente a cuerpos de funcionarios docentes.",
+           "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23140",
+           "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-23140"
+          }
+         }
+        },
+        {
+         "nombre": "COMUNIDAD AUTÓNOMA DE ANDALUCÍA",
+         "epigrafe": {
+          "nombre": "Concursos",
+          "item": {
+           "identificador": "BOE-A-2026-22923",
+           "titulo": "Resolución de 20 de octubre de 2026, de la Consejería de Justicia, por la que se convoca la provisión de puestos de trabajo en la Oficina de la Secretaría de Gobierno del Tribunal Superior de Justicia de Andalucía y las Secretarías de los Tribunales de Instancia, por el sistema de libre designación.",
+           "url_html": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22923",
+           "url_xml": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-22923"
+          }
+         }
         }
        ]
       },

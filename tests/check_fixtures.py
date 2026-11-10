@@ -24,7 +24,7 @@ def check(cond, msg):
 
 payload = json.loads((ROOT / "fixtures" / "sumario_20261028.json").read_text(encoding="utf-8"))
 items = list(boe.iter_items(payload))
-check(len(items) == 8 + 2 + 2 + 1 + 1, f"parcours JSON : {len(items)} items lus au lieu de 14")
+check(len(items) == 16, f"parcours JSON : {len(items)} items lus au lieu de 16")
 check(any(i["id"] == "BOE-A-2026-90004" for i in items), "parcours : item sous epigrafe/item en objet unique non lu")
 check({i["section"] for i in items} == {"2A", "2B", "1"}, "parcours : sections mal lues")
 
@@ -40,7 +40,7 @@ check(kinds.count("appointment") == 3, f"appointment : {kinds.count('appointment
 check(kinds.count("resolution") == 1, "résolution Carrière diplomatique non reconnue")
 check(kinds.count("vacancy") == 1, "convocation Consejerías de Trabajo non reconnue")
 check("check" not in kinds, "faux positif 'check'")
-check(not any("BOE-A-2026-90003" in m.boe_ids or "BOE-A-2026-22453" in m.boe_ids or "BOE-A-2026-90005" in m.boe_ids for m in mvs),
+check(not any("BOE-A-2026-90003" in m.boe_ids or "BOE-A-2026-22453" in m.boe_ids or "BOE-A-2026-90005" in m.boe_ids or "BOE-A-2026-23140" in m.boe_ids or "BOE-A-2026-22923" in m.boe_ids for m in mvs),
       "bruit (université, cabinet, section I) classé à tort")
 
 g = group(mvs)
