@@ -14,7 +14,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
-NAME = r"(?:don|doña|D\.|Dña\.)\s+(?P<name>[^,.]+(?:\s+[^,.]+)*?)"
+NAME = r"(?:don|doña|D\.|Dña\.)\s+(?P<name>[^,.]+?)"
 
 RE_DESIGNA = re.compile(
     r"por el que se (?:designa|nombra) (?P<cargo>Embajador(?:a)?\b.*?) a " + NAME + r"\s*\.?$", re.I)
