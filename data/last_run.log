@@ -27,4 +27,4 @@ Source: Boletin Oficial del Estado (BOE), sections II.A and II.B, all ministries
 Automatic alert: please check the BOE link before contacting anyone.
 ======================================================================
 
-3 mouvement(s), aucune écriture (aucun envoi par ce script).
+3 mouvement(s), alerte mise en file dans data/outbox.json (aucun envoi par ce script).

@@ -1,0 +1,41 @@
+[
+  {
+    "date": "2026-11-04",
+    "kind": "cese",
+    "person": "Ana Paredes Prieto",
+    "post": "Embajadora de España en la República de Cabo Verde",
+    "place": "Cabo Verde",
+    "ministry": "MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN",
+    "boe_ids": [
+      "BOE-A-2026-23106"
+    ],
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23106",
+    "detected": "2026-11-10"
+  },
+  {
+    "date": "2026-11-04",
+    "kind": "appointment",
+    "person": "Juan Manglano Aboín",
+    "post": "Embajador de España en la República de Cabo Verde",
+    "place": "Cabo Verde",
+    "ministry": "MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN",
+    "boe_ids": [
+      "BOE-A-2026-23107"
+    ],
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23107",
+    "detected": "2026-11-10"
+  },
+  {
+    "date": "2026-11-04",
+    "kind": "appointment",
+    "person": "Sergio Farré Salvá",
+    "post": "Embajador de España en el Estado de Brunéi Darusalam",
+    "place": "Brunéi Darusalam",
+    "ministry": "MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN",
+    "boe_ids": [
+      "BOE-A-2026-23108"
+    ],
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23108",
+    "detected": "2026-11-10"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "BOE-DIGEST:2026-11-10:0e58e074",
+    "created": "2026-11-10",
+    "to": [
+      "leon.deryckel@mobilitas.org"
+    ],
+    "subject": "[Diplo ES] BOE alert 2026-11-02 to 2026-11-10 -- 2 appointments, 1 end of mission",
+    "body": "BOE alert, 2026-11-02 to 2026-11-10: 2 appointments, 1 end of mission.\n\nAPPOINTMENTS (2)\n  - Juan Manglano Aboín -- Embajador de España en la República de Cabo Verde\n      Where: Cabo Verde\n      Ministry: MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN  |  BOE date: 2026-11-04\n      https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23107\n  - Sergio Farré Salvá -- Embajador de España en el Estado de Brunéi Darusalam\n      Where: Brunéi Darusalam\n      Ministry: MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN  |  BOE date: 2026-11-04\n      https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23108\n\nENDS OF MISSION (CESE) (1)\n  - Ana Paredes Prieto -- Embajadora de España en la República de Cabo Verde\n      Where: Cabo Verde\n      Ministry: MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN  |  BOE date: 2026-11-04\n      https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23106\n\nSource: Boletin Oficial del Estado (BOE), sections II.A and II.B, all ministries.\nAutomatic alert: please check the BOE link before contacting anyone.",
+    "meta": {
+      "name": "BOE alert 2026-11-10",
+      "event": "digest",
+      "location": "",
+      "branch": "AGS Spain",
+      "link": "https://www.boe.es/boe/dias/2026/11/10/"
+    }
+  }
+]
