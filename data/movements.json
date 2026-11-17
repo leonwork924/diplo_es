@@ -292,5 +292,31 @@
     ],
     "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22241",
     "detected": "2026-11-10"
+  },
+  {
+    "date": "2026-11-13",
+    "kind": "resolution",
+    "person": "",
+    "post": "Resuelve la convocatoria de libre designación, efectuada por Resolución de 7 de julio de 2026, en Consejerías de Trabajo, Migraciones y Seguridad Social",
+    "place": "",
+    "ministry": "MINISTERIO DE TRABAJO Y ECONOMÍA SOCIAL",
+    "boe_ids": [
+      "BOE-A-2026-23773"
+    ],
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23773",
+    "detected": "2026-11-17"
+  },
+  {
+    "date": "2026-11-13",
+    "kind": "vacancy",
+    "person": "",
+    "post": "Corrigen errores en la de 28 de octubre de 2026, por la que se convoca concurso para la provisión de puestos de asesores técnicos y asesoras técnicas en el exterior",
+    "place": "",
+    "ministry": "MINISTERIO DE EDUCACIÓN, FORMACIÓN PROFESIONAL Y DEPORTES",
+    "boe_ids": [
+      "BOE-A-2026-23790"
+    ],
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23790",
+    "detected": "2026-11-17"
   }
 ]

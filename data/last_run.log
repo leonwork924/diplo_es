@@ -1,7 +1,40 @@
   2026-11-10 : 259 textes lus, 0 mouvement(s)
   2026-11-11 : 187 textes lus, 0 mouvement(s)
   2026-11-12 : 210 textes lus, 0 mouvement(s)
-3 jour(s) de BOE lus entre 2026-11-10 et 2026-11-12 ; 0 mouvement(s) nouveau(x).
-  rien de nouveau
+  2026-11-13 : 271 textes lus, 2 mouvement(s)
+  2026-11-14 : 388 textes lus, 0 mouvement(s)
+  2026-11-15 : pas de BOE
+  2026-11-16 : 273 textes lus, 0 mouvement(s)
+  2026-11-17 : 288 textes lus, 0 mouvement(s)
+7 jour(s) de BOE lus entre 2026-11-10 et 2026-11-17 ; 2 mouvement(s) nouveau(x).
+  resolution: 1, vacancy: 1
+  [PAR ANNEE] 2026 : resolution: 1, vacancy: 1 (total 2)
 
-0 mouvement(s), pas d alerte (aucun envoi par ce script).
+======================================================================
+TO: antonio.gonzalez@ags-globalsolutions.com, karolyn.perez@ags-globalsolutions.com, sonia.sanchez@ags-globalsolutions.com
+SUBJECT: [Diplo ES] BOE alert 2026-11-10 to 2026-11-17 (other moves) -- 1 awarded-posts text, 1 vacancy
+----------------------------------------------------------------------
+BOE alert, 2026-11-10 to 2026-11-17: 1 awarded-posts text, 1 vacancy.
+
+POSTS AWARDED (NAMES IN THE BOE ANNEX) (1)
+  - Resuelve la convocatoria de libre designación, efectuada por Resolución de 7 de julio de 2026, en Consejerías de Trabajo, Migraciones y Seguridad Social
+      Ministry: MINISTERIO DE TRABAJO Y ECONOMÍA SOCIAL  |  BOE date: 2026-11-13
+      > CONSEJERÍA DE TRABAJO, MIGRACIONES Y SEGURIDAD SOCIAL EN PORTUGAL – LISBOA.
+      > CONSEJERÍA DE TRABAJO, MIGRACIONES Y SEGURIDAD SOCIAL EN SENEGAL – DAKAR.
+      > CONSEJERÍA DE TRABAJO, MIGRACIONES Y SEGURIDAD SOCIAL EN VENEZUELA – CARACAS.
+      (lines extracted automatically from the BOE text: check the link)
+      https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23773
+
+VACANCIES (NO NAME YET) (1)
+  - Corrigen errores en la de 28 de octubre de 2026, por la que se convoca concurso para la provisión de puestos de asesores técnicos y asesoras técnicas en el exterior
+      Ministry: MINISTERIO DE EDUCACIÓN, FORMACIÓN PROFESIONAL Y DEPORTES  |  BOE date: 2026-11-13
+      > Resolución de 6 de noviembre de 2026, de la Subsecretaría, por la que se corrigen errores en la de 28 de octubre de 2026, por la que se convoca concurso para la provisión de puestos de asesores técnicos y asesoras técnic
+      > Advertidos errores en la Resolución de 28 de octubre de 2026, de la Subsecretaría, publicada en el «Boletín Oficial del Estado» número 271, de 31 de octubre de 2026, por la que se convoca concurso de méritos para la prov
+      (lines extracted automatically from the BOE text: check the link)
+      https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23790
+
+Source: Boletin Oficial del Estado (BOE), sections II.A and II.B, all ministries.
+Automatic alert: please check the BOE link before contacting anyone.
+======================================================================
+
+2 mouvement(s), 1 e-mail(s) mis en file dans data/outbox.json (aucun envoi par ce script).

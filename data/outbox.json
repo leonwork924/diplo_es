@@ -52,5 +52,23 @@
       "branch": "AGS Spain",
       "link": "https://www.boe.es/boe/dias/2026/11/10/"
     }
+  },
+  {
+    "id": "BOE-DIGEST:2026-11-17:d042eb0b",
+    "created": "2026-11-17",
+    "to": [
+      "antonio.gonzalez@ags-globalsolutions.com",
+      "karolyn.perez@ags-globalsolutions.com",
+      "sonia.sanchez@ags-globalsolutions.com"
+    ],
+    "subject": "[Diplo ES] BOE alert 2026-11-10 to 2026-11-17 (other moves) -- 1 awarded-posts text, 1 vacancy",
+    "body": "BOE alert, 2026-11-10 to 2026-11-17: 1 awarded-posts text, 1 vacancy.\n\nPOSTS AWARDED (NAMES IN THE BOE ANNEX) (1)\n  - Resuelve la convocatoria de libre designación, efectuada por Resolución de 7 de julio de 2026, en Consejerías de Trabajo, Migraciones y Seguridad Social\n      Ministry: MINISTERIO DE TRABAJO Y ECONOMÍA SOCIAL  |  BOE date: 2026-11-13\n      > CONSEJERÍA DE TRABAJO, MIGRACIONES Y SEGURIDAD SOCIAL EN PORTUGAL – LISBOA.\n      > CONSEJERÍA DE TRABAJO, MIGRACIONES Y SEGURIDAD SOCIAL EN SENEGAL – DAKAR.\n      > CONSEJERÍA DE TRABAJO, MIGRACIONES Y SEGURIDAD SOCIAL EN VENEZUELA – CARACAS.\n      (lines extracted automatically from the BOE text: check the link)\n      https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23773\n\nVACANCIES (NO NAME YET) (1)\n  - Corrigen errores en la de 28 de octubre de 2026, por la que se convoca concurso para la provisión de puestos de asesores técnicos y asesoras técnicas en el exterior\n      Ministry: MINISTERIO DE EDUCACIÓN, FORMACIÓN PROFESIONAL Y DEPORTES  |  BOE date: 2026-11-13\n      > Resolución de 6 de noviembre de 2026, de la Subsecretaría, por la que se corrigen errores en la de 28 de octubre de 2026, por la que se convoca concurso para la provisión de puestos de asesores técnicos y asesoras técnic\n      > Advertidos errores en la Resolución de 28 de octubre de 2026, de la Subsecretaría, publicada en el «Boletín Oficial del Estado» número 271, de 31 de octubre de 2026, por la que se convoca concurso de méritos para la prov\n      (lines extracted automatically from the BOE text: check the link)\n      https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23790\n\nSource: Boletin Oficial del Estado (BOE), sections II.A and II.B, all ministries.\nAutomatic alert: please check the BOE link before contacting anyone.",
+    "meta": {
+      "name": "BOE alert 2026-11-17",
+      "event": "digest",
+      "location": "",
+      "branch": "AGS Spain",
+      "link": "https://www.boe.es/boe/dias/2026/11/17/"
+    }
   }
 ]
