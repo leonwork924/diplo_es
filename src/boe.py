@@ -123,3 +123,48 @@ def xml_to_text(raw: str) -> str:
     t = html.unescape(t)
     lines = [re.sub(r"[ \t ]+", " ", ln).strip(" |") for ln in t.splitlines()]
     return "\n".join(ln for ln in lines if ln)
+
+
+# --- Annexe « Adjudicación » : une ligne par personne nommée --------------------------------------
+_NAME_CELL = re.compile(r"^[A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ'’ .\-]*,\s*[A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ'’ .\-]*$")
+
+
+def _cell_text(cell: str) -> str:
+    t = re.sub(r"<[^>]+>", " ", cell)
+    return re.sub(r"\s+", " ", html.unescape(t)).strip(" *")
+
+
+def extract_annex_people(raw: str) -> list[dict]:
+    """Lignes de l'annexe d'une résolution de libre designación : poste, localité, poste d'origine, personne.
+    Retourne [] si le tableau n'a pas la forme attendue (le lien BOE reste alors la référence)."""
+    out = []
+    for row in re.findall(r"(?is)<tr\b.*?</tr>", raw):
+        cells = [_cell_text(c) for c in re.findall(r"(?is)<td\b.*?</td>", row)]
+        # la cellule « personne » est suivie de son NRP (chiffres) : évite de confondre avec un poste d'origine en majuscules
+        name_i = next((i for i, c in enumerate(cells[:-1]) if _NAME_CELL.match(c) and re.fullmatch(r"\d{3,}", cells[i + 1])), None)
+        if name_i is None or name_i < 2:
+            continue
+        name = cells[name_i]
+        last, first = [x.strip() for x in name.split(",", 1)]
+        corps = next((c for c in cells[name_i + 1:] if c.upper().startswith("C.") or "CUERPO" in c.upper()), "")
+        out.append({
+            "name": f"{first.title()} {last.title()}",
+            "post": cells[1] if len(cells) > 1 else "",
+            "place": cells[2].strip(" .") if len(cells) > 2 else "",
+            "origin": cells[4] if name_i > 4 else "",
+            "corps": corps.strip(" ."),
+        })
+    return out
+
+
+def people_lines(people: list[dict]) -> list[str]:
+    lines = []
+    for p in people:
+        post = re.sub(r"\s*\(\d+\)\.?$", "", p["post"]).strip(" .")
+        ln = f"{p['name']} -> {post}"
+        if p["origin"]:
+            ln += f" | from: {p['origin'].strip(' .')}"
+        if p["corps"]:
+            ln += f" | {p['corps'].title()}"
+        lines.append(ln[:400])
+    return lines

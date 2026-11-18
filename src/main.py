@@ -87,7 +87,7 @@ def collect(d_from: date, d_to: date, seen: set[str], session, *, save_samples: 
                         (sample_dir / f"{item['id']}.xml").write_text(raw, encoding="utf-8")
                         saved += 1
                     if fetch_details:
-                        mv.details = extract_details(boe.xml_to_text(raw))
+                        mv.details = boe.people_lines(boe.extract_annex_people(raw)) or extract_details(boe.xml_to_text(raw))
             new.append(mv)
         print(f"  {d} : {n_items} textes lus, {len(new) - n_before} mouvement(s)", flush=True)
     if failed:

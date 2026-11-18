@@ -38,6 +38,7 @@ REGIONAL_DEPT = re.compile(
     r"^(?:COMUNIDAD|COMUNITAT|CIUDAD AUT|PRINCIPADO|REGI[OÓ]N DE MURCIA|JUNTA DE|GENERALITAT|XUNTA|GOBIERNO (?:DE|VASCO)|"
     r"DIPUTACI|AYUNTAMIENTO|CABILDO|CONSELL|UNIVERSIDAD|UNIVERSITAT)", re.I)
 RE_CONVOCA = re.compile(r"por la que se convoca", re.I)
+RE_CORRIGE = re.compile(r"se corrigen? errores|correcci[oó]n de errores", re.I)
 RE_RESUELVE = re.compile(r"por la que se resuelve", re.I)
 
 
@@ -100,6 +101,8 @@ def classify(item: dict) -> Movement | None:
         return Movement(kind="cese", person=m.group("name").strip(), posts=[cargo], places=[_place(cargo)], **base)
 
     if CUES.search(title):
+        if RE_CORRIGE.search(title):         # simple correction d'erreurs d'une convocation : pas de signal utile
+            return None
         if RE_RESUELVE.search(title):
             return Movement(kind="resolution", summary=_short(title), **base)
         if RE_CONVOCA.search(title):

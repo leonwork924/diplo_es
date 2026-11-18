@@ -68,6 +68,23 @@ xml = ("<texto><p>Resolución ...</p><p>ANEXO</p><table><tr><td>1</td><td>Apelli
 det = extract_details(boe.xml_to_text(xml))
 check(any("Marsella" in x for x in det), f"extraction du détail d'annexe : {det}")
 
+# Annexe d'une résolution de libre designación : une ligne par personne (fixture = lignes réelles du BOE-A-2026-23773)
+ppl = boe.extract_annex_people((ROOT / "fixtures" / "annex_adjudicacion.xml").read_text(encoding="utf-8"))
+check([p["name"] for p in ppl] == ["Teresa Vázquez Cuba", "Iván Sánchez Monge Escardo"], f"annexe : personnes lues {ppl}")
+# ligne 3 réelle : poste d'origine en MAJUSCULES avec une virgule ; ne doit pas être pris pour un nom
+row3 = ('<tr><td>3</td><td>CONSEJERÍA ... VENEZUELA – CARACAS. JEFE / JEFA DE SECCIÓN (4694537).</td><td>CARACAS.</td><td>24</td>'
+        '<td>MINISTERIO DE IGUALDAD. SUBSECRETARÍA DE IGUALDAD. S. G. DE LA OFICINA PRESUPUESTARIA, GESTIÓN ECONÓMICA Y ASUNTOS GENERALES. MADRID.</td>'
+        '<td>26</td><td>CAMPOS GUTIÉRREZ, ÁLVARO</td><td>**8150**</td><td>A2</td><td>C. GESTIÓN DE LA ADMINISTRACIÓN CIVIL DEL ESTADO.</td><td>SERVICIO ACTIVO.</td></tr>')
+p3 = boe.extract_annex_people("<table><tbody>" + row3 + "</tbody></table>")
+check(len(p3) == 1 and p3[0]["name"] == "Álvaro Campos Gutiérrez" and p3[0]["place"] == "CARACAS", f"annexe ligne 3 : {p3}")
+check(ppl and "Lisboa" in ppl[0]["place"].title() and "A CORUÑA" in ppl[0]["origin"], f"annexe : poste/origine {ppl[:1]}")
+check(any("Teresa Vázquez Cuba -> " in l for l in boe.people_lines(ppl)), "annexe : ligne de résumé")
+check(boe.extract_annex_people("<texto><p>sans tableau</p></texto>") == [], "annexe : texte sans tableau")
+# « Corrigen errores » d'une convocation : ignoré
+corr = {"id": "BOE-A-2026-90099", "title": "Resolución de 6 de noviembre de 2026, de la Subsecretaría, por la que se corrigen errores en la de 28 de octubre de 2026, por la que se convoca concurso para la provisión de puestos de asesores técnicos y asesoras técnicas en el exterior.",
+        "section": "2B", "department": "MINISTERIO DE EDUCACIÓN, FORMACIÓN PROFESIONAL Y DEPORTES", "url_html": "u", "date": "2026-11-13"}
+check(classify(corr) is None, "« corrigen errores » encore classé")
+
 if failures:
     print("ÉCHECS :")
     for f in failures:
